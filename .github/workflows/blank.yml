@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # See action.yml for all options
-      - uses: lowlighter/metrics@latest
+      - uses: my-github-username/metrics@master
+      # If you make changes on your fork, be sure not leave @latest as tag!
+
         with:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
