@@ -1,17 +1,34 @@
+  
+# This is a workflow which display most of lowlighter/metrics features
+#
+# It is also used to detect broken plugins, so that's why "plugins_errors_fatal" is enabled on most of them,
+# but you should set it to no if you're copying steps from this workflow
+#
+# ⚠️ Following jobs all uses @master branch (unstable branch with unreleased features)
+
 name: Metrics
 on:
-  # Schedule updates (each hour)
-  schedule: [{cron: "0 * * * *"}]
-  # Lines below let you run workflow manually and on each commit (optional)
+  schedule:
+    - cron: "0 2-23/4 * * *"
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    if: "github.repository == 'Cliffy57/Cliffy57'"
     steps:
-      # See action.yml for all options
-      - uses: Cliffy57/metrics@latest
 
+      # ======================================================================================
+      # 🖼️ TEMPLATES
+      # ======================================================================================
+
+      # Classic template example
+      - name: 📗 Classic template
+        if: ${{ success() || failure() }}
+        uses: Cliffy57/metrics@master
         with:
-          # Your GitHub token
+          filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+          plugins_errors_fatal: ${{ github.repository == 'Cliffy57/Cliffy57' }}
+          output_action: pull-request
