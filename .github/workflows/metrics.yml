@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # See action.yml for all options
-      - uses: my-github-username/metrics@master
+      - uses: Cliffy57/metrics@master
       # If you make changes on your fork, be sure not leave @latest as tag!
 
         with:
