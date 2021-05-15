@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # See action.yml for all options
-      - uses: Cliffy57/metrics@latest
+      - uses: Cliffy57/metrics@master
 
         with:
           # Your GitHub token
