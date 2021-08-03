@@ -28,3 +28,13 @@ jobs:
           plugin_habits_charts: yes     # Display charts section
           plugin_habits_trim: yes       # Trim unused hours on daily chart
           config_timezone: Europe/Paris # Set timezone
+ 
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user #
+          
+          plugin_skyline: yes
+          plugin_skyline_year: 0            # Set to 0 to display current year
+          plugin_skyline_frames: 60         # Use 60 frames (half-loop)
+          plugin_skyline_quality: 0.5       # Set image quality
+          plugin_skyline_compatibility: yes # Support additional browsers (⚠️ increases file size and reduce optimization)
+
